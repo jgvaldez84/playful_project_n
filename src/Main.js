@@ -14,14 +14,14 @@ const Main = ({ activeNote, onUpdateNote }) => {
           type="text"
           id="title"
           value={activeNote.title}
-          onChange={(e) => onEditField("title", "e.target.value")}
+          onChange={(e) => onEditField("title", e.target.value)}
           autoFocus
         />
         <textarea
           id="body"
           placeholder="write your note here"
           value={activeNote.body}
-          onChange={(e) => onEditField("title", "e.target.value")}
+          onChange={(e) => onEditField("title", e.target.value)}
         />
         <div className="app-main-note-preview">
           <h1 className="preview-title">{activeNote.title}</h1>
