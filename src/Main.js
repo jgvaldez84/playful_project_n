@@ -1,7 +1,9 @@
+import ReactMarkdown from "react-markdown";
+
 const Main = ({ activeNote, onUpdateNote }) => {
   const onEditField = (key, value) => {
       onUpdateNote({
-          id: activeNote.id,
+            ...activeNote,
           [key]: value,
           lastModified: Date.now()
       })
@@ -21,11 +23,11 @@ const Main = ({ activeNote, onUpdateNote }) => {
           id="body"
           placeholder="write your note here"
           value={activeNote.body}
-          onChange={(e) => onEditField("title", e.target.value)}
+          onChange={(e) => onEditField("body", e.target.value)}
         />
         <div className="app-main-note-preview">
           <h1 className="preview-title">{activeNote.title}</h1>
-          <div className="markdown-preview">{activeNote.body}</div>
+          <ReactMarkdown className="markdown-preview">{activeNote.body}</ReactMarkdown>
         </div>
       </div>
     </div>
