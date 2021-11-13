@@ -9,11 +9,11 @@ const Sidebar = ({ notes, onAddNote }) => {
           {notes.map((note) => (
                       <div className="app-sidebar-note">
                       <div className="sidebar-note-title">
-                        <strong>Title</strong>
+                        <strong>{note.title}</strong>
                         <button>Delete</button>
                       </div>
-                      <p>Note Preview</p>
-                      <small className="note-data"> Last Modified [date]</small>
+                      <p>{note.body}</p>
+                      <small className="note-data"> {note.lastModified}</small>
                     </div>
           ))}
 
